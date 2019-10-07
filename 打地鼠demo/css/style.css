@@ -1,0 +1,182 @@
+html,body,div,span,a,ul,li,ol,h1,h2,h3,h4,h5,input{margin:0px;padding:0px;box-sizing:border-box;font-family:"Microsoft YaHei",tahoma,arial,"Hiragino Sans GB","宋体",sans-serif;}
+a{text-decoration:none;}
+ul{list-style-type:none}
+
+#bgCover{
+    z-index:99999;
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+#cbgCover{
+    z-index:999999;
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+#showTip{
+    display: none;
+    position: absolute;
+    top:75%;
+    left:50%;
+    width:140px;
+    height:25px;
+    margin-left:-70px;
+    line-height: 25px;
+    border-radius: 10px;
+    font-size:14px;
+    text-align: center;
+    color:#fff;
+    background:rgba(0,0,0,0.4);
+    z-index:999999;
+    opacity:0;
+    }
+
+.voice-setting-content{
+    z-index:999998;
+    display: none;
+}
+
+
+.voice-setting-content{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+#voice-setting{
+    width:300px;
+    height:240px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-150px;
+    margin-top:-120px;
+    border-radius: 30px;
+    padding:15px 0px;
+    box-sizing: border-box;
+    background:url(../images/ticBg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#voice-setting .voice-setting-title{
+    width:230px;
+    margin:-45px auto;
+}
+#voice-setting .voice-setting-title img{
+    width:100%;
+}
+#voice-setting .voice-setting-box{
+    margin-top:70px;
+}
+#voice-setting .setting-name{
+    width:100px;
+    text-align: center;
+    float:left;
+    font-size:16px;
+    line-height:20px;
+    margin-left:15px;
+    line-height:35px;
+}
+#voice-setting .voice-bar{
+    position: relative;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    float:left;
+}
+
+/*#bg-music-bar,
+#hammer-music-bar{
+    background:#a77336; 
+}*/
+#voice-setting .voice-bar img {
+    width:100%;
+}
+#bg-music-setting-rate,
+#hammer-music-setting-rate{
+    position: absolute;
+    top:6px;
+    left:7px;
+    height:20px;
+    width:75px;
+}
+
+#bg-music-setting-rate img,
+#hammer-music-setting-rate img{
+height:20px;
+}
+
+
+.bar-item{
+    margin-bottom:20px;
+    overflow: hidden;
+
+}
+
+#bg-music-setting-btn,
+#hammer-music-setting-btn{
+    position: absolute;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 50%;
+    left:50%;
+    margin-left:-10px;
+    /*transition: left 0.1s linear 0s;*/
+}
+#bg-music-setting-btn{
+ width: 20px;
+ height:30px;
+ top:-4px;
+}
+#hammer-music-setting-btn{
+    width: 35px;
+ height:25px;
+ top:-8px;
+}
+#bg-music-setting-btn img,
+#hammer-music-setting-btn img{
+    width:100%;
+}
+#voice-setting .voice-setting-close{
+    position: absolute;
+    top:-20px;
+    right:0px;
+    width: 30px;
+    height:30px;
+    z-index:999;
+}
+#voice-setting .voice-setting-close img{
+    width:100%;
+}
+
+.voice-on-off{
+    position: relative;
+    width:60px;
+    height:20px;
+    float:left;
+}
+
+#vibrate-on-off-btn{
+    position: absolute;
+    top:4px;
+    width:27px;
+    height:20px;
+    border-radius: 5px;
+}
+.vibrate-off{
+    left:6px;
+}
+.vibrate-on{
+    right:6px;
+}
+
+
+
+#vibrate-on-off img{
+    width:100%;
+}

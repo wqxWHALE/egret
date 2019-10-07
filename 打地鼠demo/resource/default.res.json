@@ -1,0 +1,174 @@
+{
+	"groups": [
+		{
+			"keys": "music_png",
+			"name": "preload"
+		},
+		{
+			"keys": "titleBg_png,bg1_jpg,bg2_png,bgCloud_png,title_png,hammer_png,gopherShow01_png,gopherShow02_png,gopherClick01_png,gopherClick02_png,hole02_png,hole01_png,levelBg_png,settingBg_png,startBtn_png,time_png,timeBg_png,startGame_png,backshop_png,coinBg_png,close_png,getPreferenceBtn_png,nextChapter_png,successBg_png,back_png,loseBg_png,restart_png,getPreferenceSuccess_png,timeWarn_png,backIndex_png",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "music/music.png",
+			"type": "image",
+			"name": "music_png"
+		},
+		{
+			"url": "assets/titleBg.png",
+			"type": "image",
+			"name": "titleBg_png"
+		},
+		{
+			"url": "assets/bg1.jpg",
+			"type": "image",
+			"name": "bg1_jpg"
+		},
+		{
+			"url": "assets/bg2.png",
+			"type": "image",
+			"name": "bg2_png"
+		},
+		{
+			"url": "assets/bgCloud.png",
+			"type": "image",
+			"name": "bgCloud_png"
+		},
+		{
+			"url": "assets/title.png",
+			"type": "image",
+			"name": "title_png"
+		},
+		{
+			"url": "assets/hammer.png",
+			"type": "image",
+			"name": "hammer_png"
+		},
+		{
+			"url": "assets/gopherShow02.png",
+			"type": "image",
+			"name": "gopherShow02_png"
+		},
+		{
+			"url": "assets/gopherShow01.png",
+			"type": "image",
+			"name": "gopherShow01_png"
+		},
+		{
+			"url": "assets/gopherClick02.png",
+			"type": "image",
+			"name": "gopherClick02_png"
+		},
+		{
+			"url": "assets/gopherClick01.png",
+			"type": "image",
+			"name": "gopherClick01_png"
+		},
+		{
+			"url": "assets/hole02.png",
+			"type": "image",
+			"name": "hole02_png"
+		},
+		{
+			"url": "assets/hole01.png",
+			"type": "image",
+			"name": "hole01_png"
+		},
+		{
+			"url": "assets/timeBg.png",
+			"type": "image",
+			"name": "timeBg_png"
+		},
+		{
+			"url": "assets/levelBg.png",
+			"type": "image",
+			"name": "levelBg_png"
+		},
+		{
+			"url": "assets/settingBg.png",
+			"type": "image",
+			"name": "settingBg_png"
+		},
+		{
+			"url": "assets/startBtn.png",
+			"type": "image",
+			"name": "startBtn_png"
+		},
+		{
+			"url": "assets/time.png",
+			"type": "image",
+			"name": "time_png"
+		},
+		{
+			"url": "assets/startGame.png",
+			"type": "image",
+			"name": "startGame_png"
+		},
+		{
+			"url": "assets/backshop.png",
+			"type": "image",
+			"name": "backshop_png"
+		},
+		{
+			"url": "assets/coinBg.png",
+			"type": "image",
+			"name": "coinBg_png"
+		},
+		{
+			"url": "assets/close.png",
+			"type": "image",
+			"name": "close_png"
+		},
+		{
+			"url": "assets/getPreferenceBtn.png",
+			"type": "image",
+			"name": "getPreferenceBtn_png"
+		},
+		{
+			"url": "assets/nextChapter.png",
+			"type": "image",
+			"name": "nextChapter_png"
+		},
+		{
+			"url": "assets/successBg.png",
+			"type": "image",
+			"name": "successBg_png"
+		},
+		{
+			"url": "assets/back.png",
+			"type": "image",
+			"name": "back_png"
+		},
+		{
+			"url": "assets/loseBg.png",
+			"type": "image",
+			"name": "loseBg_png"
+		},
+		{
+			"url": "assets/restart.png",
+			"type": "image",
+			"name": "restart_png"
+		},
+		{
+			"url": "assets/getPreferenceSuccess.png",
+			"type": "image",
+			"name": "getPreferenceSuccess_png"
+		},
+		{
+			"url": "assets/timeWarn.png",
+			"type": "image",
+			"name": "timeWarn_png"
+		},
+		{
+			"url": "assets/backIndex.png",
+			"type": "image",
+			"name": "backIndex_png"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+    "gameData":[
+        {
+            "checkPointID":"1",
+            "checkPointTime":"20000",
+            "gohgerShowTime":"1000",
+            "spaceTime":"500",
+            "failTime":3,
+            "userLevel":"1",
+            "checkPointLevel":"1"
+        },
+        {
+            "checkPointID":"1",
+            "checkPointTime":"20000",
+            "gohgerShowTime":"500",
+            "spaceTime":"500",
+            "failTime":3,
+            "userLevel":"2",
+            "checkPointLevel":"2"
+        }
+    ],
+  "prizeData":[
+      {
+        "prizeName":"奖品1",
+        "hasNext":"success"
+      },
+      {
+        "prizeName":"奖品2",
+        "hasNext":"fail"
+      }
+      
+  ]
+}

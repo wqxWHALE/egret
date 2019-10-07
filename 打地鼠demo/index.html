@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>打地鼠</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <link href="css/style.css?v=1.27" rel="stylesheet" type="text/css" />
+    <link href="css/loading.css?v=1.1s" rel="stylesheet" type="text/css" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="hidden" id="myID" value="">
+    <input type="hidden" id="gameID" value="1">
+    <input type="hidden" id="vibrateOnOff" value="OFF">
+    <input type="hidden" id="host" value="https://ai.ai-zz.com/smallgamepromalltest/CWM/">
+    
+    <audio id="startmusic"  style='display:none;'><source src="music/bg.mp3" type="audio/mpeg"/></audio>
+    <!--<audio src="music/bg.mp3" id="startmusic" preload='none' style='display:none;' class='media-audio' autoplay preload controls='controls' loop="loop"></audio>-->
+    <div id="divEgret" style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="fixedWidth"
+         data-resolution-mode="retina"
+         data-frame-rate="40"
+         data-content-width="640"
+         data-content-height="1010"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+    </div>
+
+    <div id="bgCover"></div>
+
+    <div id="cbgCover"></div>
+<!--暂未发现作用-->
+    <div id="showTip"></div>
+
+
+
+<!--设置按钮-->
+    <div class="voice-setting-content">
+        <div id="voice-setting">
+            <div class="voice-setting-close"><img src="images/close.png" /></div>
+            <div class="voice-setting-title"><img src="images/settingTitle.png" /></div>
+            <div class="voice-setting-box">
+              <div class="bar-item">
+                  <div class="setting-name">背景音效</div>
+                  <div id="bg-music-bar" class="voice-bar">
+                      <img src="images/barBg.png" />
+                      <div id="bg-music-setting-rate" class="setting-rate"><img src="images/bgMusSpeed.png" /></div>
+                      <div id="bg-music-setting-btn"><img src="images/bgMusBtn.png" /></div>
+                    </div>
+              </div>
+                <div class="bar-item">
+                    <div class="setting-name">游戏音效</div>
+                    <div id="hammer-music-bar" class="voice-bar">
+                        <img src="images/barBg.png" />
+                        <div id="hammer-music-setting-rate" class="setting-rate"><img src="images/hammerMusSpeed.png" /></div>
+                        <div id="hammer-music-setting-btn"><img src="images/hammerMusBtn.png" /></div>
+                    </div>
+                </div>
+                <div class="bar-item">
+                    <div class="setting-name" style="line-height:30px;">振动效果</div>
+                    <div id="vibrate-on-off" class="voice-on-off">
+                        <img src="images/vibrateBg.png" />
+                        <div id="vibrate-on-off-btn" class="vibrate-off"><img src="images/off.png" /></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="jquery/jquery.min.js"></script>
+<script>document.write(`
+
+<script src="jquery/voice.js?t=${Date.now()}"><\/script>
+
+
+`);</script>
+
+
+<script>
+
+ document.addEventListener('DOMContentLoaded', function () {
+          $("#startmusic").get(0).play();
+          $("#startmusic").get(0).volume=0.5;
+       });
+
+
+function audioAutoPlay(id) {
+   var audio = document.getElementById(id),
+       play = function () {
+           audio.play();
+       };
+   audio.play();
+   audio.volume=0.5;
+   document.addEventListener("WeixinJSBridgeReady", function () {
+       play();
+   }, false);
+}
+
+
+
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+             **/
+            egret.runEgret({ renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor:function(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }});
+        });
+    });
+    xhr.send(null);
+
+        function loadingCover(cmd) {
+            if (cmd == "show") {
+                if ($("div.loadingCover").length <= 0) {
+                    $("body").prepend("<div class='loadingCover flexCenter'><div class=\"loading\"><span></span><span></span><span></span><span></span><span></span></div></div>")
+                }
+                //$("div.loadingCover").fadeIn("fast");
+                $("div.loadingCover").show();
+            } else if (cmd == "hide") {
+                //$("div.loadingCover").fadeOut("fast");
+                $("div.loadingCover").hide();
+            }
+        }
+
+        function showTip(tipText){
+            $("#showTip").show();
+            $("#showTip").animate({"opacity":1},500);
+            $("#showTip").html(tipText);
+            setTimeout(function(){
+                $("#showTip").animate({"opacity":0},500,function(){
+                    $("#showTip").hide();
+                });
+                
+            },2000);
+        }
+
+
+</script>
+</body>
+
+</html>

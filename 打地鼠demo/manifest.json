@@ -1,0 +1,33 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/game/game.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/assetsmanager/assetsmanager.js",
+		"libs/modules/dragonBones/dragonBones.js",
+		"libs/modules/socket/socket.js",
+		"libs/modules/promise/promise.js"
+	],
+	"game": [
+		"bin-debug/util/BaseAppScene.js",
+		"bin-debug/util/BaseLayer.js",
+		"bin-debug/layer/IndexLayer.js",
+		"bin-debug/gopherGame/MeadowOfGopher.js",
+		"bin-debug/gopherGame/object/Gopher.js",
+		"bin-debug/gopherGame/object/GopherCover.js",
+		"bin-debug/gopherGame/object/Hammer.js",
+		"bin-debug/gopherGame/object/Hole.js",
+		"bin-debug/layer/GameLayer.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/layer/LoseLayer.js",
+		"bin-debug/layer/WinLayer.js",
+		"bin-debug/util/Animation.js",
+		"bin-debug/AppScene.js",
+		"bin-debug/Main.js",
+		"bin-debug/util/Enums.js",
+		"bin-debug/util/Layout.js",
+		"bin-debug/util/Methods.js",
+		"bin-debug/util/MusicUI.js"
+	]
+}
